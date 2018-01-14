@@ -3,25 +3,24 @@
 //  LearningSwift
 //
 //  Created by Dane on 1/10/18.
-//  Copyright © 2018 DaneCollins. All rights reserved.
+//  Copyright © 2018 DaneCollins. All rights reserved..
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
-    var count = 0
+   
     @IBOutlet weak var myLabel: UILabel!
     
+    @IBOutlet weak var topTextField: UITextField!
+    
+    @IBOutlet weak var bottomTextField: UITextField!
+    
     @IBAction func ultraButton(_ sender: Any) {
-        view.backgroundColor = UIColor.red
-        count = count + 1
-        print(count)
-        myLabel.text = "Dane's App"
-        if count >= 10 {
-            view.backgroundColor = UIColor.green
-            myLabel.text = " yay"
-        }
+       var sum = Double(topTextField.text!)! + Double(bottomTextField.text!)!
+        
+        myLabel.text = String(sum)
     }
     
    
