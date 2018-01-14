@@ -10,17 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
-   
     @IBOutlet weak var myLabel: UILabel!
-    
     @IBOutlet weak var topTextField: UITextField!
-    
     @IBOutlet weak var bottomTextField: UITextField!
     
+    @IBOutlet weak var additionSwitch: UISwitch!
     @IBAction func ultraButton(_ sender: Any) {
-       var sum = Double(topTextField.text!)! + Double(bottomTextField.text!)!
         
-        myLabel.text = String(sum)
+        let addition = additionSwitch.isOn
+        
+        if addition {
+            let sum = Double(topTextField.text!)! + Double(bottomTextField.text!)!
+            
+            myLabel.text = String(sum)
+        } else{
+            let sum = Double(topTextField.text!)! - Double(bottomTextField.text!)!
+            
+            myLabel.text = String(sum)
+        }
+       
     }
     
    
